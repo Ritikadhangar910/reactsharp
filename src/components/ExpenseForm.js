@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   const [title, settitle] = useState("");
   const [amount, setamount] = useState("");
   const [date, setdate] = useState("");
@@ -10,12 +10,14 @@ const ExpenseForm = () => {
       amount: amount,
       date: new Date(date),
     };
-    console.log(obj);
+    props.onsummitval(obj);
+    settitle("");
+    setamount("");
+    setdate("");
   }
   return (
     <>
       <h2>ExpenseForm</h2>
-      <br />
       <input
         type="text"
         value={title}
