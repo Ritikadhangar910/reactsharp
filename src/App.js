@@ -1,6 +1,5 @@
-import "./App.css";
-import ExpenseItem from "./components/ExpenseItem";
-function App() {
+import ExpenseItem from "./components/Expense/ExpenseItem";
+const App = () => {
   const expenses = [
     {
       title: "Car insurense",
@@ -41,6 +40,6 @@ function App() {
       ))}
     </div>
   );
-}
+};
 
 export default App;

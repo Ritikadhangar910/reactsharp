@@ -24,6 +24,19 @@
   color: white;
 }
 
+.cover {
+  text-align: left;
+  color: blue;
+}
+.expensedate {
+  color: red;
+}
+.expensedetail {
+  color: green;
+}
+.card {
+  background-color: pink;
+}
 .App-link {
   color: #61dafb;
 }
