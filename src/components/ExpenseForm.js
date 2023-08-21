@@ -3,6 +3,15 @@ const ExpenseForm = () => {
   const [title, settitle] = useState("");
   const [amount, setamount] = useState("");
   const [date, setdate] = useState("");
+  function summitbtn(e) {
+    e.preventDefault();
+    const obj = {
+      title: title,
+      amount: amount,
+      date: new Date(date),
+    };
+    console.log(obj);
+  }
   return (
     <>
       <h2>ExpenseForm</h2>
@@ -33,9 +42,12 @@ const ExpenseForm = () => {
         }}
       />
       <br />
-      <p>Expense title: {title} </p>
-      <p>Expense Amount: {amount} </p>
-      <p>Expense Date: {date}</p>
+      <form action="">
+        <p>Expense title: {title} </p>
+        <p>Expense Amount: {amount} </p>
+        <p>Expense Date: {date}</p>
+        <button onClick={summitbtn}>Summit it</button>
+      </form>
     </>
   );
 };
