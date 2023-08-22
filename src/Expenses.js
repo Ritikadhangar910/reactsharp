@@ -1,22 +1,10 @@
-import ExpenseItem from "./components/Expense/ExpenseItem";
+import DataFilter from "./DataFilter";
 function Expense(props) {
-  const items = props.val;
-  console.log(props.year, "year");
   return (
     <div className="App">
-      {items.map((item, ind) => (
-        <>
-          {props.year === item.d.getFullYear() ? (
-            <ExpenseItem
-              key={ind}
-              title={item.title}
-              amount={item.amount}
-              d={item.d}
-            />
-          ) : null}
-        </>
-      ))}
+      <DataFilter val={props.val} year={props.year} />
     </div>
   );
 }
+
 export default Expense;
