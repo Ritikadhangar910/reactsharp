@@ -1,12 +1,21 @@
 import ExpenseItem from "./components/Expense/ExpenseItem";
 function Expense(props) {
+  const items = props.val;
+  console.log(props.year, "year");
   return (
     <div className="App">
-      <ExpenseItem
-        title={props.val.title}
-        amount={props.val.amount}
-        d={props.val.date}
-      />
+      {items.map((item, ind) => (
+        <>
+          {props.year === item.d.getFullYear() ? (
+            <ExpenseItem
+              key={ind}
+              title={item.title}
+              amount={item.amount}
+              d={item.d}
+            />
+          ) : null}
+        </>
+      ))}
     </div>
   );
 }

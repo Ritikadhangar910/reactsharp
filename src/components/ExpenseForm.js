@@ -2,13 +2,13 @@ import React, { useState } from "react";
 const ExpenseForm = (props) => {
   const [title, settitle] = useState("");
   const [amount, setamount] = useState("");
-  const [date, setdate] = useState("");
+  const [d, setdate] = useState("");
   function summitbtn(e) {
     e.preventDefault();
     const obj = {
       title: title,
       amount: amount,
-      date: new Date(date),
+      d: new Date(d),
     };
     props.onsummitval(obj);
     settitle("");
@@ -38,7 +38,7 @@ const ExpenseForm = (props) => {
         type="date"
         name=""
         id=""
-        value={date}
+        value={d}
         onChange={(e) => {
           setdate(e.target.value);
         }}
@@ -47,7 +47,7 @@ const ExpenseForm = (props) => {
       <form action="">
         <p>Expense title: {title} </p>
         <p>Expense Amount: {amount} </p>
-        <p>Expense Date: {date}</p>
+        <p>Expense Date: {d}</p>
         <button onClick={summitbtn}>Summit it</button>
       </form>
     </>
