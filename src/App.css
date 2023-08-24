@@ -40,7 +40,15 @@
 .App-link {
   color: #61dafb;
 }
-
+.formdata input {
+  width: 200px;
+  height: 20px;
+  font-size: 18px;
+}
+.invalid input {
+  background-color: blue;
+  outline: 1px solid red;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
