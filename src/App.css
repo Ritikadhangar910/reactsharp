@@ -46,8 +46,10 @@
   font-size: 18px;
 }
 .invalid input {
-  background-color: blue;
   outline: 1px solid red;
+}
+.invalid button {
+  background-color: rgb(255, 0, 0, 0.5);
 }
 @keyframes App-logo-spin {
   from {
