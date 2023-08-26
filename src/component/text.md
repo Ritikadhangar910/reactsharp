@@ -1,36 +1,31 @@
-<!-- 1) we can return only 1 value at a time because JSX is convert into JS code in JS also we can return only 1 value at a time.
+<!-- 1) Side effect is code that we don't directly show on the screen for eg fatching API.
 
-2) By using a wrapper of any element so we use div here.
+2) If we call API in a component then it run when component render and if we write use state code inside the api then it cause infinite loop because we use usestate then also component render.
 
-3) if we write div inside div in this case on every page then in our main HTML page there will be div inside unneccessely that can be create problem they slow down the application and using that our code look messy this is known as div soap.
-
-3) 1)
-
-Actually we wrap all the code which we written inside return & then we get these code as children prop of Wrapper component and return as single value so we don't need any extra div
-
-2) no
+3) useEffect run on the condition that we specify not run every time this is how it solve the problem.
 
 
 
-4)
+3)
 
-1) It wrap all code in a single value.
+1) when user reload or state change the page the information got vanish because browser reload the data again.
 
-2) No
+2) 1) If we store the information in the localstorage.
 
-3) No
+2) and check once when the page is reload for first time.
 
-
-
-5) Actually all component exist inside app component using portals we can placed our element out side root element
-
-2)An adapter is a design that allows two incompatible interface to work together. Here React Dom work as an adapter between real DOM and virtual DOM. Actually React-DOM is responsible for taking the changes by user and applying them in the real DOM.It ensures that real DOM updates only the elements the needs to change,which result in better performence compared to directly manipulating the entire DOM.
-
-3) JSX element and DOM node.
+3) this can we achieve using use effect.
 
 
 
+3) useEffect run when the dependency change. first time these is no dependency so [] is set and because we are not changing it so it will not call further.
 
 
 
- -->
+4) & 5)
+
+
+
+1)useeffect run after whenever page reload & it we write use state code in useeffect in that case that cause infinte loop.
+
+2) Beacuse in that we don't need to write code twice. -->
