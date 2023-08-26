@@ -3,7 +3,8 @@ function Showage(props) {
   return (
     <>
       <h2>
-        My name is {props.name} & I'm {props.age} Years old{" "}
+        My name is {props.name} & I'm {props.age} Years old & college is{" "}
+        {props.college}
       </h2>
     </>
   );
