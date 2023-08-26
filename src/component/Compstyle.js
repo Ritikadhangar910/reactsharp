@@ -1,21 +1,16 @@
 import React, { useState } from "react";
 import "../App.css";
-const Compstyle = (props) => {
+const Compstyle = () => {
   const [val, setval] = useState(true);
-  const [name, setname] = useState("");
-  const [age, setage] = useState("");
+  const [formval, formsetval] = useState("");
+  const [disable, setdisable] = useState(false);
   function summitform(e) {
     e.preventDefault();
-    if (age.length === 0 || name.length === 0) {
+    if (formval.length === 0) {
       setval(false);
-    } else if (age <= 0) {
-      alert("enter a valid age");
+      setdisable(true);
     } else {
-      const obj = {
-        name: name,
-        age: age,
-      };
-      props.onformSummit(obj);
+      console.log(formval);
     }
   }
   return (
@@ -26,28 +21,17 @@ const Compstyle = (props) => {
         onSubmit={summitform}
         className={`formdata ${!val ? "invalid" : ""}`}
       >
-        User Name:
         <input
           type="text"
-          value={name}
+          value={formval}
           onChange={(e) => {
-            setname(e.target.value);
-            setval(true);
-          }}
-        />
-        <br />
-        <br /> Age (Years):
-        <input
-          type="text"
-          value={age}
-          onChange={(e) => {
-            setage(e.target.value);
-            setval(true);
+            formsetval(e.target.value);
+            setdisable(false);
           }}
         />
         <br />
         <br />
-        <button>Add Element</button>
+        <button disabled={disable}>Add Element</button>
       </form>
     </>
   );
