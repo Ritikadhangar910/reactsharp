@@ -45,11 +45,20 @@
   height: 20px;
   font-size: 18px;
 }
+.formdata input:focus {
+  background-color: #b4e3f0;
+  outline-color: blue;
+}
+.invalid input {
+  background-color: pink;
+  outline-color: red;
+}
 .formdata button {
   background-color: green;
   width: 100px;
   height: 30px;
 }
+
 .invalid input {
   outline: 1px solid red;
 }
